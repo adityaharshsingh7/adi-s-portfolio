@@ -329,7 +329,7 @@ section {
 
 .experience-details-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex;
   flex-direction: column;
 }
 
