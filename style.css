@@ -335,7 +335,7 @@ section {
 
 .article-container {
   display: flex;
-  text-align: initial;  /*chnGE */
+  text-align: left;  /*chnGE */
   flex-wrap: wrap;
   flex-direction: row;
   gap: 2.5rem;
