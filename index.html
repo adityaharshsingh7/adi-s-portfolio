@@ -380,26 +380,19 @@
     <script src="script.js"></script>
 
 
-<script src="https://d160lx8zbkej88.cloudfront.net/lex-web-ui-loader.min.js"></script>
-<script>
-  var loaderOpts = {
-    baseUrl: 'https://d160lx8zbkej88.cloudfront.net/',
-    shouldLoadMinDeps: true
-  };
-  var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
-  var chatbotUiConfig = {
-          /* Example of setting session attributes on parent page
-          lex: {
-            sessionAttributes: {
-              userAgent: navigator.userAgent,
-              QNAClientFilter: ''
-            }
-          }
-          */
-        };
-  loader.load(chatbotUiConfig)
-    .catch(function (error) { console.error(error); });
+    <script>
+window.embeddedChatbotConfig = {
+chatbotId: "xgPQyFBlEALlk513iZ8fz",
+domain: "www.chatbase.co"
+}
 </script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="xgPQyFBlEALlk513iZ8fz"
+domain="www.chatbase.co"
+defer>
+</script>
+
 
 
 
