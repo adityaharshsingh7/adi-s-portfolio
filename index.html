@@ -1,335 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aditya's Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Aditya</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Harsh — AI/ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+<nav id="navbar">
+  <div class="nav-logo">AH<span class="accent">.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#skills" onclick="closeMobile()">Skills</a>
+    <a href="#experience" onclick="closeMobile()">Experience</a>
+    <a href="#projects" onclick="closeMobile()">Projects</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+</nav>
+<section id="hero">
+  <canvas id="networkCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-tag reveal-up" style="--d:0.1s"><span class="dot"></span> Available for internship</div>
+    <h1 class="hero-name reveal-up" style="--d:0.2s">Aditya<br /><span class="stroke-text">Harsh</span></h1>
+    <div class="hero-role reveal-up" style="--d:0.35s">
+      <span class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
+    </div>
+    <p class="hero-desc reveal-up" style="--d:0.5s">Building AI systems that see what humans miss —<br />from medical imaging to drone analytics.</p>
+    <div class="hero-cta reveal-up" style="--d:0.65s">
+      <a href="./assets/Aditya_cv.pdf" target="_blank" class="btn-primary">
+        <span>Download CV</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+      <a href="#projects" class="btn-outline">View Work</a>
+    </div>
+    <div class="hero-socials reveal-up" style="--d:0.8s">
+      <a href="https://linkedin.com/in/aditya-harsh07" target="_blank" class="social-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/adityaharshsingh7" target="_blank" class="social-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+  <div class="hero-img-wrapper reveal-right" style="--d:0.3s">
+    <div class="hero-img-ring"></div>
+    <div class="hero-img-ring ring2"></div>
+    <img src="assets/aditya.png.png" alt="Aditya Harsh" class="hero-img" />
+    <div class="hero-badge badge1"><span class="badge-num">97.1%</span><span class="badge-label">CV Accuracy</span></div>
+    <div class="hero-badge badge2"><span class="badge-num">3+</span><span class="badge-label">AI Projects</span></div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+<section id="about">
+  <div class="section-label reveal-up">About Me</div>
+  <div class="about-grid">
+    <div class="about-img-col reveal-left">
+      <div class="about-img-wrap">
+        <img src="assets/adityaabout.png.jpeg" alt="Aditya" />
+        <div class="about-img-accent"></div>
+      </div>
+    </div>
+    <div class="about-text-col reveal-right">
+      <h2 class="section-title">I build things<br /><em>that think.</em></h2>
+      <p class="about-body">Final-year Computer Science student at Karnavati University, currently working as an AI/ML Engineering Intern at <strong>D3S Healthcare</strong> — where I built a real-world anomaly detection engine for a proprietary medical imaging device, achieving <strong>97.1% accuracy</strong> without a single pretrained model.</p>
+      <p class="about-body">My work sits at the intersection of <strong>computer vision</strong>, statistical modeling, and deployment engineering. When I'm not training models, I'm preparing for CAT &amp; RBI Grade B — because understanding systems, financial or otherwise, is the same skill.</p>
+      <div class="about-stats">
+        <div class="stat-pill"><span class="stat-n">2+</span><span class="stat-l">Internships</span></div>
+        <div class="stat-pill"><span class="stat-n">6+</span><span class="stat-l">Certifications</span></div>
+        <div class="stat-pill"><span class="stat-n">B.Sc CS</span><span class="stat-l">May 2026</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="section-label reveal-up">What I work with</div>
+  <h2 class="section-title centered reveal-up">Skills &amp; Stack</h2>
+  <div class="skills-grid">
+    <div class="skill-card reveal-up" style="--d:0s"><div class="skill-icon">👁️</div><h3>Computer Vision</h3><div class="skill-tags"><span>OpenCV</span><span>YOLO</span><span>CNNs</span><span>Object Detection</span><span>Segmentation</span></div></div>
+    <div class="skill-card reveal-up" style="--d:0.1s"><div class="skill-icon">🧠</div><h3>AI / ML</h3><div class="skill-tags"><span>TensorFlow</span><span>PyTorch</span><span>Keras</span><span>Scikit-learn</span><span>Anomaly Detection</span></div></div>
+    <div class="skill-card reveal-up" style="--d:0.2s"><div class="skill-icon">✨</div><h3>Generative AI</h3><div class="skill-tags"><span>Claude AI</span><span>LangChain</span><span>Gemini API</span><span>RAG</span><span>LoRA/PEFT</span></div></div>
+    <div class="skill-card reveal-up" style="--d:0.3s"><div class="skill-icon">☁️</div><h3>Cloud &amp; MLOps</h3><div class="skill-tags"><span>AWS</span><span>Oracle OCI</span><span>Docker</span><span>Git</span><span>Amplify</span></div></div>
+    <div class="skill-card reveal-up" style="--d:0.4s"><div class="skill-icon">📊</div><h3>Data &amp; Analytics</h3><div class="skill-tags"><span>NumPy</span><span>Pandas</span><span>Power BI</span><span>Tableau</span><span>SQL</span></div></div>
+    <div class="skill-card reveal-up" style="--d:0.5s"><div class="skill-icon">💻</div><h3>Development</h3><div class="skill-tags"><span>Python</span><span>JavaScript</span><span>React</span><span>HTML/CSS</span><span>Flask</span></div></div>
+  </div>
+</section>
+<section id="experience">
+  <div class="section-label reveal-up">Where I've worked</div>
+  <h2 class="section-title centered reveal-up">Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item reveal-left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="tcard-header">
+          <div><h3>AI / ML Engineering Intern</h3><p class="tcard-company">D3S Healthcare Technologies · Ahmedabad</p></div>
+          <span class="tcard-date">Jan 2026 – Present</span>
+        </div>
+        <ul class="tcard-bullets">
+          <li>Built BR-Scan anomaly detection engine from scratch — <strong>97.1% accuracy</strong> on proprietary red-light transillumination data, no pretrained model.</li>
+          <li>Designed statistical baseline pipeline: Master Healthy Profile averaging, ECC alignment, Hough Circle nipple masking, morphological cleaning.</li>
+          <li>Developed 3-component confidence scoring (margin + spatial coherence + distribution skew) for per-diagnosis certainty.</li>
+          <li>Architected production pipeline with batch orchestration and JSON audit trail for 1,500-image scale-up.</li>
         </ul>
+        <div class="tcard-tags"><span>OpenCV</span><span>Python</span><span>SciPy</span><span>Statistical CV</span></div>
       </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Aditya</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+    </div>
+    <div class="timeline-item reveal-right">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="tcard-header">
+          <div><h3>AI / ML Data Intern</h3><p class="tcard-company">Elevate Labs · Remote</p></div>
+          <span class="tcard-date">Mar – Apr 2025</span>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
+        <ul class="tcard-bullets">
+          <li>Deployed supervised classification models achieving <strong>90%+ accuracy</strong>.</li>
+          <li>Automated data validation pipelines achieving <strong>15% improvement</strong> in downstream model performance.</li>
+        </ul>
+        <div class="tcard-tags"><span>Python</span><span>ML Models</span><span>Data Pipeline</span></div>
       </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="assets/aditya.png.png" alt="Aditya harsh profile picture" />
+    </div>
+    <div class="timeline-item reveal-left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="tcard-header">
+          <div><h3>AWS Cloud &amp; Robotics Intern</h3><p class="tcard-company">Internship Studio · Remote</p></div>
+          <span class="tcard-date">Mar – Apr 2024</span>
+        </div>
+        <ul class="tcard-bullets">
+          <li>Deployed ROS on AWS cloud infrastructure for scalable robotics applications.</li>
+          <li>Managed large-scale datasets in AWS S3 supporting real-time reporting pipelines.</li>
+        </ul>
+        <div class="tcard-tags"><span>AWS</span><span>ROS</span><span>Cloud</span></div>
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Aditya Harsh</h1>
-        <p class="section__text__p2">student pursuing BSc CS (hons.)</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/Aditya_cv.pdf')"
-          >
-            Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="section-label reveal-up">What I've built</div>
+  <h2 class="section-title centered reveal-up">Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card featured reveal-up" style="--d:0s">
+      <div class="project-card-inner">
+        <div class="project-number">01</div>
+        <div class="project-top">
+          <div class="project-icon">🏥</div>
+          <a href="https://github.com/adityaharshsingh7" target="_blank" class="proj-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
         </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/'"
-          />
-        </div>
+        <span class="project-featured-badge">Featured</span>
+        <h3>BR-Scan Anomaly Detection</h3>
+        <p>Production CV pipeline for malignant tissue detection in proprietary red-light transillumination scans. 97.1% accuracy on pilot dataset — no pretrained model used.</p>
+        <div class="project-tech"><span>OpenCV</span><span>Python</span><span>SciPy</span><span>Hough Transform</span></div>
+        <div class="project-metric"><span class="metric-val">97.1%</span><span class="metric-label">Diagnostic Accuracy</span></div>
       </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="assets/adityaabout.png.jpeg"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>AI/ML,Automation,cloud <br />Intern</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Bsc cs(hons.)with specialisation in AI/ML<br /></p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-            Aspiring technology professional specializing in AI/ML with proven skills in computer vision, deep learning, cloud deployment, and solution delivery. Experienced in collaborating with cross-functional teams to translate business needs into scalable technical implementations using Python, TensorFlow, PyTorch, and AWS. Strong communicator passionate about driving innovation and business transformation through technology
-            </p>
-          </div>
-        </div>
+    </div>
+    <div class="project-card reveal-up" style="--d:0.1s">
+      <div class="project-card-inner">
+        <div class="project-number">02</div>
+        <div class="project-top"><div class="project-icon">🚗</div><a href="https://github.com/adityaharshsingh7/ANN.git" target="_blank" class="proj-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
+        <h3>Number Plate Recognition</h3>
+        <p>Real-time ANPR pipeline using YOLOv5 and OpenCV with 90%+ detection accuracy and end-to-end preprocessing.</p>
+        <div class="project-tech"><span>YOLO</span><span>OpenCV</span><span>Python</span></div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title"></h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>AWS</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Power BI</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Deep learning</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Automation</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Figma</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Machine learning</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Artificial intelligence</h3>
-                </div>
-              </article>
-            </div>
-          </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Automatic number plate recognition"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Automatic number plate recognition</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/adityaharshsingh7/ANN.git'"
-              >
-                Click Here
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Face Mask Detection System</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/adityaharshsingh7/Face_mask_detection.git'"
-              >
-                Click Here
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Traffic volume Prediction</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/adityaharshsingh7/Traffic_volume_prediction.git'"
-              >
-                Click Here
-              </button>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="project-card reveal-up" style="--d:0.2s">
+      <div class="project-card-inner">
+        <div class="project-number">03</div>
+        <div class="project-top"><div class="project-icon">😷</div><a href="https://github.com/adityaharshsingh7/Face_mask_detection.git" target="_blank" class="proj-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
+        <h3>Face Mask Detection</h3>
+        <p>Real-time mask detection using custom-trained TensorFlow CNN with live alert functionality and Flask deployment.</p>
+        <div class="project-tech"><span>TensorFlow</span><span>CNN</span><span>Flask</span></div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:adityaharsh07@gmail.com">adityaharsh07@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
-        </div>
+    </div>
+    <div class="project-card reveal-up" style="--d:0.3s">
+      <div class="project-card-inner">
+        <div class="project-number">04</div>
+        <div class="project-top"><div class="project-icon">🤖</div><a href="https://github.com/adityaharshsingh7" target="_blank" class="proj-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
+        <h3>Multimodal RAG Explorer</h3>
+        <p>Context-aware document retrieval prototype using Gemini Multimodality API, vector databases, and LoRA/PEFT.</p>
+        <div class="project-tech"><span>Gemini API</span><span>RAG</span><span>LangChain</span></div>
       </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright © 2024 Aditya Harsh. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-    <script>
-window.embeddedChatbotConfig = {
-chatbotId: "xgPQyFBlEALlk513iZ8fz",
-domain: "www.chatbase.co"
-}
-</script>
-<script
-src="https://www.chatbase.co/embed.min.js"
-chatbotId="xgPQyFBlEALlk513iZ8fz"
-domain="www.chatbase.co"
-defer>
-</script>
-    
-  </body>
+    </div>
+    <div class="project-card reveal-up" style="--d:0.4s">
+      <div class="project-card-inner">
+        <div class="project-number">05</div>
+        <div class="project-top"><div class="project-icon">🚦</div><a href="https://github.com/adityaharshsingh7/Traffic_volume_prediction.git" target="_blank" class="proj-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
+        <h3>Traffic Volume Prediction</h3>
+        <p>ML model for urban traffic forecasting with feature engineering and time-series analysis across road segments.</p>
+        <div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>Pandas</span></div>
+      </div>
+    </div>
+    <div class="project-card reveal-up" style="--d:0.5s">
+      <div class="project-card-inner">
+        <div class="project-number">06</div>
+        <div class="project-top"><div class="project-icon">🗑️</div><a href="https://github.com/adityaharshsingh7" target="_blank" class="proj-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
+        <h3>Smart Waste Segregator</h3>
+        <p>IoT-based AI-assisted smart bin for automated waste segregation with notification system. Capstone project.</p>
+        <div class="project-tech"><span>IoT</span><span>Python</span><span>Hardware</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="section-label reveal-up">Let's connect</div>
+  <h2 class="section-title centered reveal-up">Get In Touch</h2>
+  <p class="contact-sub reveal-up">Open to internships, collaborations, and interesting problems.</p>
+  <div class="contact-cards reveal-up">
+    <a href="mailto:adityaharsh07@gmail.com" class="contact-card">
+      <div class="contact-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div><p class="contact-card-label">Email</p><p class="contact-card-val">adityaharsh07@gmail.com</p></div>
+    </a>
+    <a href="https://linkedin.com/in/aditya-harsh07" target="_blank" class="contact-card">
+      <div class="contact-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+      <div><p class="contact-card-label">LinkedIn</p><p class="contact-card-val">aditya-harsh07</p></div>
+    </a>
+    <a href="https://github.com/adityaharshsingh7" target="_blank" class="contact-card">
+      <div class="contact-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+      <div><p class="contact-card-label">GitHub</p><p class="contact-card-val">adityaharshsingh7</p></div>
+    </a>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">AH<span class="accent">.</span></span>
+    <p>© 2025 Aditya Harsh — Built with intention.</p>
+    <nav class="footer-nav"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+  </div>
+</footer>
+<script>window.embeddedChatbotConfig={chatbotId:"xgPQyFBlEALlk513iZ8fz",domain:"www.chatbase.co"}</script>
+<script src="https://www.chatbase.co/embed.min.js" chatbotId="xgPQyFBlEALlk513iZ8fz" domain="www.chatbase.co" defer></script>
+<script src="script.js"></script>
+</body>
 </html>
