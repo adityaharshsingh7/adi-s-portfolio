@@ -1,3 +1,9 @@
+/* ═══════════════════════════════════════════
+   ADITYA HARSH PORTFOLIO — V2 REDESIGN
+   Theme: Dark Cyber / AI Engineer
+   Fonts: Syne (display) + Space Mono (code) + Inter (body)
+═══════════════════════════════════════════ */
+
 :root {
   --bg:        #080c14;
   --bg2:       #0d1422;
@@ -122,21 +128,6 @@ a:hover ~ .cursor, button:hover ~ .cursor { transform: translate(-50%,-50%) scal
   pointer-events:none; z-index:0; opacity:0.6;
 }
 .hero-content { position:relative; z-index:1; max-width: 560px; }
-.hero-tag {
-  display:inline-flex; align-items:center; gap:8px;
-  background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.2);
-  border-radius:100px; padding:6px 14px;
-  font-size:0.8rem; color:var(--accent); margin-bottom:1.5rem;
-  font-family:'Space Mono', monospace;
-}
-.dot {
-  width:8px; height:8px; border-radius:50%;
-  background:var(--accent3);
-  box-shadow: 0 0 8px var(--accent3);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
-
 .hero-name {
   font-family:'Syne', sans-serif;
   font-size: clamp(3.5rem, 8vw, 6.5rem);
@@ -398,11 +389,28 @@ section:not(#hero):nth-child(even) { background:var(--bg2); }
 }
 .project-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; }
 .project-icon { font-size:1.75rem; }
-.proj-link {
-  color:var(--text-muted); transition:color 0.2s;
-  display:flex; align-items:center;
+.proj-cta-btn {
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  margin-top:auto; padding:10px 16px;
+  background: rgba(0,212,255,0.06);
+  border:1px solid rgba(0,212,255,0.2);
+  border-radius:8px;
+  color:var(--accent); text-decoration:none;
+  font-size:0.82rem; font-weight:600; letter-spacing:0.04em;
+  font-family:'Space Mono', monospace;
+  transition: all 0.25s;
+  position:relative; overflow:hidden;
 }
-.proj-link:hover { color:var(--accent); }
+.proj-cta-btn::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(90deg, transparent, rgba(0,212,255,0.08), transparent);
+  transform:translateX(-100%);
+  transition:transform 0.5s ease;
+}
+.proj-cta-btn:hover { background:rgba(0,212,255,0.12); border-color:var(--accent); transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,212,255,0.15); }
+.proj-cta-btn:hover::before { transform:translateX(100%); }
+.proj-cta-arrow { margin-left:auto; transition:transform 0.25s; }
+.proj-cta-btn:hover .proj-cta-arrow { transform:translateX(4px); }
 .project-featured-badge {
   display:inline-block; font-size:0.65rem; font-family:'Space Mono',monospace;
   background:rgba(0,212,255,0.1); border:1px solid rgba(0,212,255,0.2);
@@ -422,13 +430,6 @@ section:not(#hero):nth-child(even) { background:var(--bg2); }
   background:rgba(16,185,129,0.07); border:1px solid rgba(16,185,129,0.15);
   color:#34d399; font-size:0.72rem; padding:2px 10px; border-radius:100px;
 }
-.project-metric {
-  display:flex; align-items:baseline; gap:8px;
-  margin-top:auto; padding-top:1rem; border-top:1px solid var(--border);
-}
-.metric-val { font-family:'Syne',sans-serif; font-weight:800; font-size:1.5rem; color:var(--accent); }
-.metric-label { font-size:0.75rem; color:var(--text-muted); }
-
 /* ── CONTACT ───────────────────────────── */
 #contact { text-align:center; }
 .contact-sub {
